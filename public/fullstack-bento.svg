@@ -2,7 +2,7 @@
   <defs>
     <!-- Code Editor Window Pattern -->
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#00E5FF" flood-opacity="0.15" />
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#10b981" flood-opacity="0.15" />
     </filter>
     <linearGradient id="windowGradient" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0F172A" />
@@ -17,7 +17,7 @@
   <rect x="26" y="21" width="448" height="30" rx="11" fill="#1E293B" />
   <circle cx="45" cy="36" r="5" fill="#EF4444" />
   <circle cx="65" cy="36" r="5" fill="#EAB308" />
-  <circle cx="85" cy="36" r="5" fill="#22C55E" />
+  <circle cx="85" cy="36" r="5" fill="#10b981" />
   <text x="250" y="40" fill="#64748B" font-family="monospace" font-size="12" text-anchor="middle">deploy.config.ts</text>
 
   <!-- Syntax Highlighting & Typing Animation -->
@@ -44,15 +44,15 @@
 
   <!-- Floating Layers / Deployment Blocks -->
   <g transform="translate(340, 60)">
-    <rect x="0" y="0" width="100" height="25" rx="4" fill="#0EA5E9" fill-opacity="0.2" stroke="#0EA5E9" stroke-width="2">
+    <rect x="0" y="0" width="100" height="25" rx="4" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2">
       <animate attributeName="y" values="100;0;100" dur="4s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" />
     </rect>
-    <rect x="0" y="35" width="100" height="25" rx="4" fill="#8B5CF6" fill-opacity="0.2" stroke="#8B5CF6" stroke-width="2">
+    <rect x="0" y="35" width="100" height="25" rx="4" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2">
       <animate attributeName="y" values="100;35;100" dur="4s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" />
     </rect>
-    <rect x="0" y="70" width="100" height="25" rx="4" fill="#22C55E" fill-opacity="0.2" stroke="#22C55E" stroke-width="2">
+    <rect x="0" y="70" width="100" height="25" rx="4" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2">
       <animate attributeName="y" values="100;70;100" dur="4s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" />
     </rect>

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function CaseStudiesSectionClient() {
   return (
-    <div className="min-h-screen bg-[#0A1128] pt-16">
+    <div className="min-h-screen bg-background pt-16">
       <CaseStudiesSection />
     </div>
   );

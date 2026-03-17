@@ -16,7 +16,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "BabulTech | Certified Expertise. Rapid Resolution.",
-  description: "Enterprise IT Solutions, CRM Implementation, and Full-Stack App Development",
+  description: "Enterprise IT Solutions, CRM Implementation, and Technical Partnership",
 };
 
 export default function RootLayout({
@@ -25,9 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${jakarta.variable} antialiased flex flex-col min-h-screen pt-20`}
+        suppressHydrationWarning
       >
         <Navigation />
         <main className="flex-grow">

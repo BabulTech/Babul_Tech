@@ -41,12 +41,12 @@ function TeamMemberCard({ member, index }: { member: any; index: number }) {
       <div className="absolute inset-0 p-6 flex flex-col justify-end">
         {/* Visible Text */}
         <div className={`relative z-10 transform transition-transform duration-500 ease-out ${expanded ? "-translate-y-4" : ""}`}>
-          <div className={`w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/20 backdrop-blur-md flex items-center justify-center p-1 mb-6 transition-all duration-500 ${expanded ? "opacity-100 -translate-y-2" : "opacity-0 translate-y-4"}`}>
+          <div className={`w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 backdrop-blur-md flex items-center justify-center p-1 mb-6 transition-all duration-500 ${expanded ? "opacity-100 -translate-y-2" : "opacity-0 translate-y-4"}`}>
             <img src={member.image} alt={member.name} className="w-full h-full object-cover rounded-xl" />
           </div>
 
-          <h3 className={`text-2xl font-bold text-white mb-1 transition-colors duration-300 ${expanded ? "text-blue-400" : ""}`}>{member.name}</h3>
-          <p className={`font-medium tracking-wide text-sm uppercase transition-colors duration-300 ${expanded ? "text-slate-300" : "text-blue-500/80"}`}>{member.role}</p>
+          <h3 className={`text-2xl font-bold text-foreground mb-1 transition-colors duration-300 ${expanded ? "text-primary" : ""}`}>{member.name}</h3>
+          <p className={`font-medium tracking-wide text-sm uppercase transition-colors duration-300 ${expanded ? "text-slate-300" : "text-primary/80"}`}>{member.role}</p>
         </div>
 
         {/* Hidden Content that slides up on tap/hover */}
@@ -61,7 +61,7 @@ function TeamMemberCard({ member, index }: { member: any; index: number }) {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center py-3 min-h-[48px] bg-[#0077b5]/90 hover:bg-[#0077b5] text-white text-sm font-semibold rounded-xl backdrop-blur-md transition-all duration-300"
+                className="flex-1 flex items-center justify-center py-3 min-h-[48px] bg-[#0077b5]/90 hover:bg-[#0077b5] text-foreground text-sm font-semibold rounded-xl backdrop-blur-md transition-all duration-300"
                 onClick={(e) => e.stopPropagation()}
               >
                 <Linkedin className="w-4 h-4 mr-2" />
@@ -69,7 +69,7 @@ function TeamMemberCard({ member, index }: { member: any; index: number }) {
               </a>
               <a
                 href={`mailto:${member.email}`}
-                className="flex items-center justify-center px-4 min-h-[48px] min-w-[48px] bg-slate-800/80 hover:bg-slate-700 text-white rounded-xl backdrop-blur-md transition-all duration-300 border border-slate-700 hover:border-slate-600"
+                className="flex items-center justify-center px-4 min-h-[48px] min-w-[48px] bg-slate-800/80 hover:bg-slate-700 text-foreground rounded-xl backdrop-blur-md transition-all duration-300 border border-slate-700 hover:border-slate-600"
                 onClick={(e) => e.stopPropagation()}
               >
                 <Mail className="w-5 h-5" />
@@ -129,24 +129,24 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
-                Pioneering the Future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Enterprise IT</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
+                Pioneering the Future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">Enterprise IT</span>
               </h1>
               <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-                At BabulTech, we specialize in transforming complex technical challenges into streamlined, scalable solutions. From CRM implementations to full-stack application development, we are your certified partners in digital transformation.
+                At BabulTech, we specialize in transforming complex technical challenges into streamlined, scalable solutions. From CRM implementations to serving as your comprehensive technical partner, we are your certified guides in digital transformation.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <div className="flex items-center space-x-2 text-white">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500" />
+                <div className="flex items-center space-x-2 text-foreground">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
                   <span>Certified Experts</span>
                 </div>
-                <div className="flex items-center space-x-2 text-white">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500" />
+                <div className="flex items-center space-x-2 text-foreground">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
                   <span>Rapid Resolution</span>
                 </div>
-                <div className="flex items-center space-x-2 text-white">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500" />
+                <div className="flex items-center space-x-2 text-foreground">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
                   <span>24/7 Support</span>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="text-center px-4"
               >
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">{stat.value}</div>
                 <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">{stat.label}</div>
               </motion.div>
             ))}
@@ -204,9 +204,9 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-white mb-6"
+              className="text-3xl md:text-4xl font-bold text-foreground mb-6"
             >
-              Meet Our <span className="text-blue-400">Leadership</span>
+              Meet Our <span className="text-primary">Leadership</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}

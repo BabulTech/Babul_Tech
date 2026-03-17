@@ -15,12 +15,12 @@ function SpotlightCard({
 }) {
   return (
     <div
-      className={`relative group rounded-3xl border border-white/10 bg-[#0A1128] overflow-hidden ${
+      className={`relative group rounded-3xl border border-white/10 bg-background overflow-hidden ${
         colSpan === 2 ? 'md:col-span-2' : ''
       }`}
     >
-      <div className="pointer-events-none absolute -inset-px rounded-3xl bg-[radial-gradient(circle_at_top,rgba(0,229,255,0.14),transparent_55%)] opacity-0 transition duration-500 group-hover:opacity-100 z-0" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(41,98,255,0.14),transparent_60%)] opacity-0 transition duration-500 group-hover:opacity-100 z-0" />
+      <div className="pointer-events-none absolute -inset-px rounded-3xl bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.14),transparent_55%)] opacity-0 transition duration-500 group-hover:opacity-100 z-0" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.14),transparent_60%)] opacity-0 transition duration-500 group-hover:opacity-100 z-0" />
       
       {/* Content wrapper */}
       <div className="relative z-10 h-full p-5 sm:p-8 flex flex-col">
@@ -48,7 +48,7 @@ export function ExpertiseShowcase() {
       
       {/* 1. Infinite Trust Ticker */}
       <div className="w-full overflow-hidden flex flex-col items-center mb-14 sm:mb-24 lg:mb-32">
-        <p className="text-gray-500 uppercase tracking-widest text-sm font-semibold mb-8">
+        <p className="text-body uppercase tracking-widest text-sm font-semibold mb-8">
           Trusted by Innovative Enterprises
         </p>
           <div className="enterprise-marquee relative w-full max-w-7xl flex overflow-hidden mask-gradient-edges">
@@ -63,7 +63,7 @@ export function ExpertiseShowcase() {
                   href={c.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-400 hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer"
+                  className="flex items-center gap-3 text-body hover:text-foreground hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex items-center justify-center">
                     {c.svg}
@@ -78,11 +78,11 @@ export function ExpertiseShowcase() {
       {/* 2. The Bento Box Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter mb-4">
-            Empowering Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-[#2962FF]">Business Growth.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground tracking-tighter mb-4">
+            Empowering Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">Business Growth.</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl text-lg">
-            We deliver intelligent, tailor-made solutions—from seamless CRM integrations on a flexible pay-as-you-go model to scalable full-stack architectures. Our agenda is simple: eliminate your bottlenecks and accelerate your success.
+          <p className="text-body max-w-2xl text-lg">
+            We deliver intelligent, tailor-made solutions—from seamless CRM integrations on a flexible pay-as-you-go model to functioning as your dedicated technical partner. Our agenda is simple: eliminate your bottlenecks and accelerate your success.
           </p>
         </div>
 
@@ -91,16 +91,16 @@ export function ExpertiseShowcase() {
           {/* Large Card: Full Stack */}
           <SpotlightCard colSpan={2}>
             <div className="flex justify-between items-start mb-6">
-               <div className="p-4 rounded-2xl bg-[#2962FF]/20 text-[#2962FF] border border-[#2962FF]/30">
+               <div className="p-4 rounded-2xl bg-primary/20 text-primary border border-primary/30">
                   <Server size={32} />
                </div>
-               <div className="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider text-gray-300">
+               <div className="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider text-body">
                   SHIFTDEPLOY
                </div>
             </div>
             <div className="mt-auto z-10 relative">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-[#2962FF] transition-colors">Your Problems, Our Solutions</h3>
-              <p className="text-gray-400 text-base sm:text-lg max-w-lg mb-5 sm:mb-8">
+              <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Your Problems, Our Solutions</h3>
+              <p className="text-body text-base sm:text-lg max-w-lg mb-5 sm:mb-8">
                 We tackle your most complex operational roadblocks with intelligent, tailor-made architectures. Tell us your bottleneck, and we will engineer the precise system to eliminate it.
               </p>
               {/* Inserted Beautiful Coded Graphic */}
@@ -112,26 +112,26 @@ export function ExpertiseShowcase() {
 
           {/* Medium Card: Security */}
           <SpotlightCard>
-            <div className="p-4 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 w-max mb-8">
+            <div className="p-4 rounded-2xl bg-primary/20 text-primary border border-primary/30 w-max mb-8">
               <Fingerprint size={28} />
             </div>
             <div className="mt-auto">
-               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#2962FF] transition-colors">Zero-Trust Security</h3>
-               <p className="text-gray-400">Bank-grade encryption protocols baked directly into the application layer for complete corporate data privacy.</p>
+               <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Zero-Trust Security</h3>
+               <p className="text-body">Bank-grade encryption protocols baked directly into the application layer for complete corporate data privacy.</p>
             </div>
           </SpotlightCard>
 
           {/* Medium Card: CRM Integration */}
           <SpotlightCard>
-            <div className="p-4 rounded-2xl bg-purple-500/20 text-purple-400 border border-purple-500/30 w-max mb-8 flex items-center justify-between">
+            <div className="p-4 rounded-2xl bg-primary/20 text-primary border border-primary/30 w-max mb-8 flex items-center justify-between">
               <Workflow size={28} />
             </div>
             <div className="mt-auto">
-               <div className="mb-4 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider text-gray-300 w-max">
+               <div className="mb-4 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider text-body w-max">
                   APEX-ACCELERATOR
                </div>
-               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#2962FF] transition-colors">CRM Workflows</h3>
-               <p className="text-gray-400">Automating complex customer touchpoints to completely eliminate manual data entry and bottlenecking.</p>
+               <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">CRM Workflows</h3>
+               <p className="text-body">Automating complex customer touchpoints to completely eliminate manual data entry and bottlenecking.</p>
             </div>
           </SpotlightCard>
 
@@ -140,12 +140,12 @@ export function ExpertiseShowcase() {
             <div className="absolute inset-0 opacity-40 pointer-events-none group-hover:opacity-100 transition-opacity duration-500 overflow-hidden mix-blend-screen rounded-3xl">
               <Image src="/data-bento.svg" alt="Data flow chart" fill sizes="(max-width: 768px) 100vw, 66vw" className="w-full h-full object-cover translate-y-12" />
             </div>
-            <div className="p-4 rounded-2xl bg-[#00E5FF]/20 text-[#00E5FF] border border-[#00E5FF]/30 w-max mb-8 relative z-10">
+            <div className="p-4 rounded-2xl bg-primary/20 text-primary border border-primary/30 w-max mb-8 relative z-10">
               <Layers size={28} />
             </div>
-            <div className="mt-auto z-10 relative bg-gradient-to-t from-[#0A1128] via-[#0A1128] to-transparent pt-12 -mx-8 -mb-8 px-8 pb-8">
-               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-[#2962FF] transition-colors">Real-time Data Intelligence</h3>
-               <p className="text-gray-400 text-base sm:text-lg max-w-md">
+            <div className="mt-auto z-10 relative bg-gradient-to-t from-background via-background to-transparent pt-12 -mx-8 -mb-8 px-8 pb-8">
+               <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Real-time Data Intelligence</h3>
+               <p className="text-body text-base sm:text-lg max-w-md">
                  Transforming unstructured business metrics into beautifully visualized, highly actionable intelligence boards. We make your data work for you.
                </p>
             </div>

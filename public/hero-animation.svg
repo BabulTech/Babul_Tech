@@ -12,12 +12,12 @@
 
     <!-- Gradients -->
     <linearGradient id="cyberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00E5FF"/>
-      <stop offset="100%" stop-color="#2962FF"/>
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#10b981"/>
     </linearGradient>
     <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#22C55E"/>
-      <stop offset="100%" stop-color="#10B981"/>
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#10b981"/>
     </linearGradient>
 
     <!-- Grid Pattern -->
@@ -46,12 +46,12 @@
       <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite" linear="linear"/>
     </circle>
     
-    <circle cx="0" cy="0" r="120" fill="none" stroke="#2962FF" stroke-width="2" stroke-dasharray="60 40 20 40">
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="60 40 20 40">
       <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite" linear="linear"/>
     </circle>
 
     <!-- Central Chip Base -->
-    <rect x="-60" y="-60" width="120" height="120" rx="16" fill="#0A1128" stroke="#1E293B" stroke-width="4"/>
+    <rect x="-60" y="-60" width="120" height="120" rx="16" fill="#0f172a" stroke="#1E293B" stroke-width="4"/>
     <rect x="-50" y="-50" width="100" height="100" rx="12" fill="none" stroke="url(#cyberGradient)" stroke-width="2" filter="url(#coreGlow)"/>
     
     <!-- Code Symbol deeply embedded -->
@@ -60,7 +60,7 @@
     </text>
 
     <!-- Pulsing Inner Core -->
-    <circle cx="0" cy="0" r="8" fill="#00E5FF" filter="url(#coreGlow)">
+    <circle cx="0" cy="0" r="8" fill="#10b981" filter="url(#coreGlow)">
       <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
     </circle>
   </g>
@@ -94,7 +94,7 @@
   <g transform="translate(90, 120)">
     <rect x="0" y="0" width="120" height="60" rx="8" fill="#0F172A" stroke="#334155" stroke-width="2"/>
     <text x="60" y="35" fill="#94A3B8" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">CLOUD_API</text>
-    <circle cx="10" cy="10" r="4" fill="#00E5FF">
+    <circle cx="10" cy="10" r="4" fill="#10b981">
        <animate attributeName="opacity" values="0.2;1;0.2" dur="1s" repeatCount="indefinite"/>
     </circle>
   </g>
@@ -103,7 +103,7 @@
   <g transform="translate(90, 420)">
     <rect x="0" y="0" width="120" height="60" rx="8" fill="#0F172A" stroke="#334155" stroke-width="2"/>
     <text x="60" y="35" fill="#94A3B8" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">DB_CLUSTER</text>
-    <rect x="10" y="5" width="20" height="4" rx="2" fill="#22C55E">
+    <rect x="10" y="5" width="20" height="4" rx="2" fill="#10b981">
        <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
     </rect>
   </g>
@@ -111,21 +111,21 @@
   <!-- Module 3: Security / Auth -->
   <g transform="translate(590, 120)">
     <rect x="0" y="0" width="120" height="60" rx="8" fill="#0F172A" stroke="#334155" stroke-width="2"/>
-    <text x="60" y="35" fill="#22C55E" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">AUTH_SECURE</text>
-    <path d="M 10 15 L 20 25 L 35 10" fill="none" stroke="#22C55E" stroke-width="2"/>
+    <text x="60" y="35" fill="#10b981" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">AUTH_SECURE</text>
+    <path d="M 10 15 L 20 25 L 35 10" fill="none" stroke="#10b981" stroke-width="2"/>
   </g>
 
   <!-- Module 4: Client App -->
   <g transform="translate(590, 420)">
     <rect x="0" y="0" width="120" height="60" rx="8" fill="#0F172A" stroke="#334155" stroke-width="2"/>
     <text x="60" y="35" fill="#94A3B8" font-family="monospace" font-size="14" font-weight="600" text-anchor="middle">CLIENT_UI</text>
-    <circle cx="10" cy="10" r="4" fill="#2962FF">
+    <circle cx="10" cy="10" r="4" fill="#10b981">
        <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
     </circle>
   </g>
 
   <!-- Horizontal Scanning Laser -->
-  <rect x="0" y="0" width="800" height="2" fill="#00E5FF" opacity="0.3" filter="url(#coreGlow)">
+  <rect x="0" y="0" width="800" height="2" fill="#10b981" opacity="0.3" filter="url(#coreGlow)">
     <animate attributeName="y" values="-20;620;-20" dur="6s" repeatCount="indefinite"/>
   </rect>
 </svg>

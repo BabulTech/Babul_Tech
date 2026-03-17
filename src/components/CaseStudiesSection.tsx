@@ -28,12 +28,13 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
         
         {/* Visual / GIF Section - 50% width */}
         <div className="w-full lg:w-1/2 relative min-h-[300px] lg:min-h-full bg-slate-950 overflow-hidden">
-          <div className="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none mix-blend-overlay"></div>
           <Image
             src={study.gifSrc} 
             alt={study.title}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
           />
           <div className={`absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent z-10 ${isEven ? 'lg:bg-gradient-to-r' : 'lg:bg-gradient-to-l'}`}></div>
@@ -45,12 +46,12 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
           {/* Chunk 1: Metadata & Title */}
           <div className="mb-6 border-b border-slate-800/60 pb-6">
             <div className="flex items-center space-x-3 mb-4">
-              <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider border border-blue-500/20">
+              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider border border-primary/20">
                 {study.category}
               </span>
               <span className="text-slate-400 text-sm font-medium">{study.clientName}</span>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
               {study.title}
             </h3>
           </div>
@@ -59,7 +60,7 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
           <div className="space-y-5 mb-8">
             <div>
               <h4 className="text-slate-300 font-semibold mb-2 flex items-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400 mr-2"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
                 The Challenge
               </h4>
               <p className="text-slate-400 text-sm md:text-base leading-relaxed">
@@ -68,7 +69,7 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
             </div>
             <div>
               <h4 className="text-slate-300 font-semibold mb-2 flex items-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
                 Our Solution
               </h4>
               <p className="text-slate-400 text-sm md:text-base leading-relaxed">
@@ -84,7 +85,7 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
                 <div key={idx} className="flex flex-col">
                   <div className="flex items-center space-x-2">
                     {stat.icon && typeof stat.icon === 'string' ? stat.icon : /* fallback icon */ ''}
-                    <span className="text-2xl font-bold text-white">{stat.value}</span>
+                    <span className="text-2xl font-bold text-foreground">{stat.value}</span>
                   </div>
                   <span className="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">{stat.label}</span>
                 </div>
@@ -93,7 +94,7 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
 
             <Link 
               href={`/case-studies/${study.id}`}
-              className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3.5 rounded-xl font-medium transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] group/btn whitespace-nowrap min-w-[160px]"
+              className="flex items-center justify-center space-x-2 bg-primary hover:bg-primary text-foreground px-6 py-3.5 rounded-xl font-medium transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] group/btn whitespace-nowrap min-w-[160px]"
             >
               <span>Read Study</span>
               <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
@@ -118,8 +119,8 @@ export function CaseStudiesSection() {
 
   return (
     <section className="py-24 bg-slate-950 relative overflow-hidden" id="case-studies">
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
-      <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -130,9 +131,9 @@ export function CaseStudiesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-blue-500 font-semibold tracking-wide uppercase mb-3 text-sm">Proven Impact</h2>
-            <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Transformations Driven by <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Expertise</span>
+            <h2 className="text-primary font-semibold tracking-wide uppercase mb-3 text-sm">Proven Impact</h2>
+            <h3 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Transformations Driven by <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">Expertise</span>
             </h3>
             <p className="text-slate-400 text-lg leading-relaxed">
               Explore how we have engineered scalable, secure, and rapid solutions for enterprises confronting their toughest technical hurdles.
@@ -153,7 +154,7 @@ export function CaseStudiesSection() {
               onClick={() => setActiveCategory(cat)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${
                 activeCategory === cat 
-                  ? 'bg-blue-600 text-white border-blue-500 shadow-[0_0_15px_rgba(37,99,235,0.4)]' 
+                  ? 'bg-primary text-foreground border-primary shadow-[0_0_15px_rgba(37,99,235,0.4)]' 
                   : 'bg-slate-900/50 text-slate-400 border-slate-800 hover:border-slate-600 hover:text-slate-200'
               }`}
             >
@@ -187,7 +188,7 @@ export function CaseStudiesSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <a href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-300 font-medium shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+          <a href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-foreground bg-primary hover:bg-primary rounded-xl transition-all duration-300 font-medium shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]">
             Start Your Transformation
           </a>
         </motion.div>

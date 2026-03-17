@@ -1,6 +1,16 @@
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import { SectionLoadingSpinner } from "@/components/LoadingSpinner";
 
-import CaseStudiesSectionClient from "@/components/CaseStudiesSectionClient";
+const CaseStudiesSectionClient = dynamic(() => import("@/components/CaseStudiesSectionClient"), {
+  loading: () => <SectionLoadingSpinner />,
+  ssr: true,
+});
 
 export default function CaseStudiesPage() {
-  return <CaseStudiesSectionClient />;
+  return (
+    <Suspense fallback={<SectionLoadingSpinner />}>
+      <CaseStudiesSectionClient />
+    </Suspense>
+  );
 }
