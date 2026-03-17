@@ -17,14 +17,14 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   return {
     title: `${study.title} | BabulTech Case Studies`,
-    description: `Enterprise transformation case study: ${study.subtitle}. See how BabulTech achieved powerful ROI and architecture scaling.`,
+    description: `Enterprise transformation case study for ${study.clientName}. See how BabulTech achieved powerful ROI and architecture scaling.`,
     openGraph: {
       title: `${study.title} | BabulTech Case Studies`,
-      description: `Enterprise transformation case study: ${study.subtitle}. See how BabulTech achieved powerful ROI and architecture scaling.`,
+      description: `Enterprise transformation case study for ${study.clientName}. See how BabulTech achieved powerful ROI and architecture scaling.`,
       url: `/case-studies/${id}`,
       images: [
         {
-          url: study.image || "/og-image.jpg",
+          url: study.gifSrc || "/og-image.jpg",
           width: 1200,
           height: 630,
           alt: study.title,
