@@ -17,30 +17,39 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Sarah Jenkins",
-    role: "CTO",
-    company: "FinTech Elevate",
-    website: "https://example.com/fintech",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
-    review: "BabulTech completely revamped our CRM architecture. The pay-as-you-go model and their rapid execution saved us months of development time and integrated flawlessly with our existing stack.",
+    name: "Oren Falkovitz",
+    role: "Climate Storyteller & Marketer",
+    company: "Managed Hasan directly",
+    website: "https://www.linkedin.com/in/oren-falkovitz/", // We can add their profile URL here once you provide it
+    image: "https://media.licdn.com/dms/image/v2/D4E35AQE0RPai9xMnhQ/profile-framedphoto-shrink_200_200/B4EZu8.MOcKsAY-/0/1768401978556?e=1774386000&v=beta&t=WpNfRY7BbGQ3SoFMtVNEAtdKKD2VD49g5U6vHdoQu5U", // placeholder until we inject the real one
+    review: "Hasan is a problem-solver. He helped our organization become more efficient. Whenever I went to Hasan with a request, he either had the answer or would research and propose a solution. He applied a user-first approach, prioritizing our users' experience and reducing manual work.",
     rating: 5
   },
   {
-    name: "David Chen",
-    role: "Operations Director",
-    company: "Global Logistics",
-    website: "https://example.com/logistics",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop",
-    review: "We had critical bottlenecks in our data pipelines. BabulTech provided extremely smart solutions that scaled our throughput intelligently. Their team works like an extension of our own.",
+    name: "Faizan ul Haq",
+    role: "Director of Marketing",
+    company: "Bentham Science",
+    website: "https://www.linkedin.com/in/faizanulhaq/",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQF_UG2HG36FWQ/profile-displayphoto-crop_800_800/B4DZpIXcfhGQAI-/0/1762150697906?e=1775088000&v=beta&t=u_eaaZETJgVcAEGPTGpugr_bZ6pNITZHJHkQI6EV3wg",
+    review: "Hasan is a highly skilled professional with exceptional expertise, professionalism, and work ethic. He consistently produces high-quality work and is an excellent communicator who effectively conveys complex ideas to both technical and non-technical stakeholders.",
     rating: 5
   },
   {
-    name: "Emily Rodriguez",
-    role: "VP of Engineering",
-    company: "HealthSync",
-    website: "https://example.com/healthsync",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
-    review: "Their technical expertise is unmatched. From securing our infrastructure to delivering a blazing fast frontend, the level of precision and collaborative partnership was phenomenal.",
+    name: "Rehan Nayyer",
+    role: "Director Salesforce Delivery",
+    company: "Senior to Hasan",
+    website: "https://www.linkedin.com/in/rnayyer/",
+    image: "https://media.licdn.com/dms/image/v2/C5603AQFEYjBSQWoVKg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517673037478?e=1775088000&v=beta&t=h-yO-_oe6PlZB4PqbPJAKRA19S4iJwt1JYCik1qw0U0",
+    review: "Hasan is an amazingly talented technical resource. His attention to details and best practices always separates him from the rest. He is a good listener, communicater, and never fails to pay attention to the business objective of problem solving.",
+    rating: 5
+  },
+  {
+    name: "Zain Askari",
+    role: "SQA",
+    company: "Paymentology",
+    website: "https://www.linkedin.com/in/zain-askari-34904630/",
+    image: "https://media.licdn.com/dms/image/v2/C5103AQF0wHg5BE9JkQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1558109097231?e=1775088000&v=beta&t=o-0aBUZ1P413pXV6UPluoAS-N12y1SQsgvNkjdmw2xk",
+    review: "Hasan did an exceptional job on the TMS and Enablon SFA Implementation. Strong, honest and energetic team player. No matter how complex the problem is, he will always come up with a brilliant and elegant solution.",
     rating: 5
   }
 ];
@@ -66,7 +75,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
           alt={testimonial.name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className={`w-full h-full object-cover transition-transform duration-700 ease-out ${expanded ? "scale-110 opacity-20" : "opacity-50"}`}
+          className={`w-full h-full object-cover origin-top transition-transform duration-700 ease-out ${expanded ? "scale-110 opacity-20" : "opacity-50"}`}
         />
         <div className={`absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent transition-opacity duration-500 ${expanded ? "opacity-90" : "opacity-80"}`}></div>
       </div>

@@ -15,8 +15,34 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "BabulTech | Certified Expertise. Rapid Resolution.",
-  description: "Enterprise IT Solutions, CRM Implementation, and Technical Partnership",
+  metadataBase: new URL('https://babultech.com'),
+  title: {
+    default: "BabulTech | Certified Expertise. Rapid Resolution.",
+    template: "%s | BabulTech"
+  },
+  description: "Enterprise IT Solutions, Software Engineering, CRM Implementation, and Technical Partnership. We engineer operational dominance.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "BabulTech",
+    title: "BabulTech | Certified Expertise. Rapid Resolution.",
+    description: "Discover BabulTech's enterprise IT solutions and software engineering services. We annihilate technical debt and build scalable architectures.",
+    images: [
+      {
+        url: "/og-image.jpg", // Make sure to add this image in public folder later
+        width: 1200,
+        height: 630,
+        alt: "BabulTech Open Graph Image",
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BabulTech | Certified Expertise. Rapid Resolution.",
+    description: "Enterprise IT Solutions, Software Engineering, and CRM Implementation.",
+    images: ["/og-image.jpg"],
+  }
 };
 
 export default function RootLayout({

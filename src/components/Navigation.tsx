@@ -45,7 +45,7 @@ export function Navigation() {
             </button>
             <div className="absolute top-[80%] left-0 w-72 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="mt-2 rounded-2xl bg-[#020617] border border-white/10 shadow-2xl overflow-hidden flex flex-col p-2">
-                    <a href="/services" className="group/item flex items-center gap-3 rounded-xl px-3 py-3 hover:bg-white/5 transition mb-1">
+                    <Link href="/services" className="group/item flex items-center gap-3 rounded-xl px-3 py-3 hover:bg-white/5 transition mb-1">
                     <div className="h-9 w-9 rounded-xl bg-white/5 border border-white/10 grid place-items-center">
                       <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_rgba(168,85,247,0.6)]" />
                     </div>
@@ -55,7 +55,7 @@ export function Navigation() {
                       </div>
                       <p className="text-xs text-body line-clamp-2 mt-0.5">Solving bottlenecks via powerful strategic Technical Partnerships</p>
                     </div>
-                  </a>
+                  </Link>
                   <a href="https://apex-accelerator.com" target="_blank" rel="noopener noreferrer" className="group/item flex items-center gap-3 rounded-xl px-3 py-3 hover:bg-white/5 transition">
                   <div className="h-9 w-9 rounded-xl bg-white/5 border border-white/10 grid place-items-center">
                     <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_rgba(16,185,129,0.6)]" />
@@ -124,9 +124,9 @@ export function Navigation() {
               <div className="px-3 py-2">
                 <p className="text-body text-xs uppercase tracking-wider mb-2 font-semibold">Services</p>
                 <div className="pl-3 space-y-1 border-l-2 border-white/10">
-                    <a href="/services" className="flex items-center gap-2 text-body py-3 min-h-[44px] hover:text-primary transition-colors rounded-lg hover:bg-white/5 px-2">
+                    <Link href="/services" className="flex items-center gap-2 text-body py-3 min-h-[44px] hover:text-primary transition-colors rounded-lg hover:bg-white/5 px-2">
                        View Our Services
-                     </a>
+                     </Link>
                      <a href="https://apex-accelerator.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-body py-3 min-h-[44px] hover:text-primary transition-colors rounded-lg hover:bg-white/5 px-2">
                      Apex-Accelerator <ExternalLink size={14}/>
                    </a>

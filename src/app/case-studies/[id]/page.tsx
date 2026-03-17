@@ -1,7 +1,38 @@
+import { Metadata } from "next";
 import { caseStudies } from "@/data/caseStudies";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+// Generate customized metadata for each dynamic case study page
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const study = caseStudies.find((cs) => cs.id === id);
+
+  if (!study) {
+    return {
+      title: "Case Study Not Found",
+    };
+  }
+
+  return {
+    title: `${study.title} | BabulTech Case Studies`,
+    description: `Enterprise transformation case study: ${study.subtitle}. See how BabulTech achieved powerful ROI and architecture scaling.`,
+    openGraph: {
+      title: `${study.title} | BabulTech Case Studies`,
+      description: `Enterprise transformation case study: ${study.subtitle}. See how BabulTech achieved powerful ROI and architecture scaling.`,
+      url: `/case-studies/${id}`,
+      images: [
+        {
+          url: study.image || "/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: study.title,
+        }
+      ]
+    },
+  };
+}
 
 // Enable dynamic params for Next.js 15+ App Router
 export default async function CaseStudyDetail({ params }: { params: Promise<{ id: string }> }) {
@@ -88,38 +119,50 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ id
               {/* Problem Chunk */}
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center">
-                  <span className="w-2 h-2 rounded-full bg-primary mr-3"></span>
-                  The Challenge
+                  <span className="w-2 h-2 rounded-full bg-primary mr-3 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
+                  The Deep Challenge
                 </h2>
-                <p className="text-slate-400 leading-relaxed text-lg">
+                <p className="text-slate-400 leading-relaxed text-lg mb-4">
                   {study.problem}
+                </p>
+                <p className="text-slate-400 leading-relaxed text-lg">
+                  {study.extendedChallenge}
                 </p>
               </div>
 
               {/* Solution Chunk */}
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center">
-                  <span className="w-2 h-2 rounded-full bg-primary mr-3"></span>
+                  <span className="w-2 h-2 rounded-full bg-primary mr-3 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
                   Our Engineering Solution
                 </h2>
-                <p className="text-slate-400 leading-relaxed text-lg mb-6">
+                <p className="text-slate-400 leading-relaxed text-lg mb-4">
                   {study.solution}
                 </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 mt-0.5 shrink-0" />
-                    <span className="text-slate-300">Conducted massive technical audits without disrupting daily workflow.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 mt-0.5 shrink-0" />
-                    <span className="text-slate-300">Designed customized, high-security infrastructure logic.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 mt-0.5 shrink-0" />
-                    <span className="text-slate-300">Ensured strict compliance regulations were adhered to during deployment.</span>
-                  </li>
+                <p className="text-slate-400 leading-relaxed text-lg mb-6">
+                  {study.extendedSolution}
+                </p>
+                <ul className="space-y-4 bg-slate-900/50 p-6 rounded-2xl border border-white/5">
+                  {study.points.map((point, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle2 className="w-5 h-5 text-primary mr-3 mt-0.5 shrink-0 drop-shadow-[0_0_5px_rgba(16,185,129,0.4)]" />
+                      <span className="text-slate-300 font-medium">{point}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
+
+              {/* Results Chunk */}
+              <div className="pt-4">
+                <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center">
+                  <span className="w-2 h-2 rounded-full bg-primary mr-3 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
+                  The ROI & Result
+                </h2>
+                <p className="text-slate-300 font-medium leading-relaxed text-lg bg-emerald-950/10 border-l-4 border-primary p-6 rounded-r-2xl">
+                  {study.results}
+                </p>
+              </div>
+
 
             </div>
 
